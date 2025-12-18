@@ -17,7 +17,7 @@ public class MyController1 {
 	public List<Mobile> getB(@RequestBody List<Mobile> c,@PathVariable String d) {
 		return c.stream().filter(x->x.getBrand().equals(d)).collect(Collectors.toList());
 	}
-	 @GetMapping(value = "/getMap") 
+	 @GetMapping("/getMap") 
 	 public List<String> getBrand(@RequestBody List<Mobile> m) {
 		 return  m.stream().map(x-> x.getBrand()).collect(Collectors.toList());
 	 }
@@ -37,7 +37,7 @@ public class MyController1 {
 		 return m.stream().map(x-> x.getPrice()).max(Comparable::compareTo).get();
 	 }
 	 
-	 @GetMapping(value = "/getMin")
+	 @GetMapping(value = "/getMinimum")
 	 public int getMin(@RequestBody List<Mobile> m) {
 		 return m.stream().map(x-> x.getPrice()).min(Comparable::compareTo).get();
 	 }

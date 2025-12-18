@@ -37,7 +37,7 @@ public class MyController1 {
 		 return m.stream().map(x-> x.getPrice()).max(Comparable::compareTo).get();
 	 }
 	 
-	 @GetMapping(value = "/getMin")
+	 @GetMapping(value = "/getMinimum")
 	 public int getMin(@RequestBody List<Mobile> m) {
 		 return m.stream().map(x-> x.getPrice()).min(Comparable::compareTo).get();
 	 }
